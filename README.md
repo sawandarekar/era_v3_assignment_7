@@ -1,6 +1,6 @@
 # era_v3_assignment_7
 
-# Model-1 execution
+## Model-1 execution
 
 ## Target:
 - Make setup ready
@@ -18,7 +18,7 @@
 
 ------------------------------------------------------------------------------------
 
-# Model-2 execution
+## Model-2 execution
 
 ## Target:
 - Reduce parameters count
