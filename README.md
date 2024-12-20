@@ -124,6 +124,7 @@ Estimated Total Size (MB): 1.02
 - skip added
 - Model test accuracy achieved 99.42% on 15th epoch
 - Model is Good fitting from 19th epoch (training accuracy: 99.32% test accuracy: 99.35%)
+- After adding image augmentations and StepLR, model is looks good on epoch 13th  (training accuracy: 99.16% test accuracy: 99.46%)
 
 ## Model-3 Summary
 ```
@@ -166,4 +167,87 @@ Forward/backward pass size (MB): 0.78
 Params size (MB): 0.04
 Estimated Total Size (MB): 0.82
 ----------------------------------------------------------------
+```
+
+## Logs from local model run
+```
+EPOCH:0 Loss=0.050359949469566345 Batch_id=937 Accuracy=93.87 LR=0.01: 100%|██████████| 938/938 [01:05<00:00, 14.37it/s]
+
+Test set: Average loss: 0.0531, Accuracy: 9840/10000 (98.40%)
+
+EPOCH:1 Loss=0.14306209981441498 Batch_id=937 Accuracy=98.08 LR=0.01: 100%|██████████| 938/938 [01:07<00:00, 13.93it/s]  
+
+Test set: Average loss: 0.0456, Accuracy: 9864/10000 (98.64%)
+
+EPOCH:2 Loss=0.011142509058117867 Batch_id=937 Accuracy=98.32 LR=0.01: 100%|██████████| 938/938 [01:07<00:00, 14.00it/s] 
+
+Test set: Average loss: 0.0315, Accuracy: 9900/10000 (99.00%)
+
+EPOCH:3 Loss=0.055059969425201416 Batch_id=937 Accuracy=98.54 LR=0.01: 100%|██████████| 938/938 [01:02<00:00, 14.93it/s] 
+
+Test set: Average loss: 0.0324, Accuracy: 9895/10000 (98.95%)
+
+EPOCH:4 Loss=0.09678667783737183 Batch_id=937 Accuracy=98.59 LR=0.01: 100%|██████████| 938/938 [01:08<00:00, 13.77it/s]  
+
+Test set: Average loss: 0.0268, Accuracy: 9919/10000 (99.19%)
+
+EPOCH:5 Loss=0.02437777630984783 Batch_id=937 Accuracy=98.76 LR=0.01: 100%|██████████| 938/938 [01:01<00:00, 15.32it/s]  
+
+Test set: Average loss: 0.0260, Accuracy: 9918/10000 (99.18%)
+
+EPOCH:6 Loss=0.005321050062775612 Batch_id=937 Accuracy=99.03 LR=0.001: 100%|██████████| 938/938 [01:04<00:00, 14.44it/s] 
+
+Test set: Average loss: 0.0213, Accuracy: 9939/10000 (99.39%)
+
+EPOCH:7 Loss=0.12339828908443451 Batch_id=937 Accuracy=99.09 LR=0.001: 100%|██████████| 938/938 [01:02<00:00, 15.08it/s]  
+
+Test set: Average loss: 0.0227, Accuracy: 9935/10000 (99.35%)
+
+EPOCH:8 Loss=0.0072998171672225 Batch_id=937 Accuracy=99.07 LR=0.001: 100%|██████████| 938/938 [01:02<00:00, 15.08it/s]   
+
+Test set: Average loss: 0.0205, Accuracy: 9942/10000 (99.42%)
+
+EPOCH:9 Loss=0.020701149478554726 Batch_id=937 Accuracy=99.12 LR=0.001: 100%|██████████| 938/938 [01:03<00:00, 14.72it/s] 
+
+Test set: Average loss: 0.0216, Accuracy: 9941/10000 (99.41%)
+
+EPOCH:10 Loss=0.003521702717989683 Batch_id=937 Accuracy=99.10 LR=0.001: 100%|██████████| 938/938 [01:08<00:00, 13.64it/s] 
+
+Test set: Average loss: 0.0200, Accuracy: 9941/10000 (99.41%)
+
+EPOCH:11 Loss=0.0066545079462230206 Batch_id=937 Accuracy=99.11 LR=0.001: 100%|██████████| 938/938 [01:01<00:00, 15.21it/s]
+
+Test set: Average loss: 0.0198, Accuracy: 9944/10000 (99.44%)
+
+EPOCH:12 Loss=0.04731645807623863 Batch_id=937 Accuracy=99.08 LR=0.0001: 100%|██████████| 938/938 [01:02<00:00, 15.05it/s]  
+
+Test set: Average loss: 0.0195, Accuracy: 9944/10000 (99.44%)
+
+EPOCH:13 Loss=0.014920426532626152 Batch_id=937 Accuracy=99.16 LR=0.0001: 100%|██████████| 938/938 [01:02<00:00, 15.05it/s] 
+
+Test set: Average loss: 0.0196, Accuracy: 9946/10000 (99.46%)
+
+EPOCH:14 Loss=0.012708238326013088 Batch_id=937 Accuracy=99.10 LR=0.0001: 100%|██████████| 938/938 [01:05<00:00, 14.28it/s] 
+
+Test set: Average loss: 0.0194, Accuracy: 9944/10000 (99.44%)
+
+EPOCH:15 Loss=0.009212363511323929 Batch_id=937 Accuracy=99.12 LR=0.0001: 100%|██████████| 938/938 [01:05<00:00, 14.42it/s] 
+
+Test set: Average loss: 0.0203, Accuracy: 9942/10000 (99.42%)
+
+EPOCH:16 Loss=0.021923506632447243 Batch_id=937 Accuracy=99.16 LR=0.0001: 100%|██████████| 938/938 [01:01<00:00, 15.29it/s] 
+
+Test set: Average loss: 0.0199, Accuracy: 9942/10000 (99.42%)
+
+EPOCH:17 Loss=0.0035537886433303356 Batch_id=937 Accuracy=99.12 LR=0.0001: 100%|██████████| 938/938 [01:02<00:00, 15.02it/s]
+
+Test set: Average loss: 0.0203, Accuracy: 9943/10000 (99.43%)
+
+EPOCH:18 Loss=0.014232362620532513 Batch_id=937 Accuracy=99.17 LR=1e-05: 100%|██████████| 938/938 [01:04<00:00, 14.47it/s] 
+
+Test set: Average loss: 0.0200, Accuracy: 9944/10000 (99.44%)
+
+EPOCH:19 Loss=0.004888974595814943 Batch_id=937 Accuracy=99.16 LR=1e-05: 100%|██████████| 938/938 [01:04<00:00, 14.47it/s] 
+
+Test set: Average loss: 0.0195, Accuracy: 9943/10000 (99.43%)
 ```
