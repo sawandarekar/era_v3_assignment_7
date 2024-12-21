@@ -258,21 +258,19 @@ Test set: Average loss: 0.0195, Accuracy: 9943/10000 (99.43%)
 
 ## Target:
 - Reduce parameters bellow 8k count
-- Make sure, defined model get trained, also add GAP, MaxPool,
-- Achive test accuracy > 99.40%
-- Limit the 20 epoch
+- Achive test accuracy > 99%
+- Limit the 15 epoch
 
 ## Result:
-- Parameters: 
-- Best Training Accuracy: 
-- Best Test Accuracy: 
+- Parameters: 7,616
+- Best Training Accuracy: 99.34%
+- Best Test Accuracy: 98.94%
 
 ## Analysis:
-- model trained with 8k parameters
-- Added Batch Normalization, MaxPool2d and dropout = 0.1
-- skip added, image augmentation, StepLR added
-- Model test accuracy achieved 99.42% on 15th epoch
-- Model is Good fitting from 19th epoch (training accuracy: 99.32% test accuracy: 99.35%)
+- model trained with 7,616 parameters
+- Added Batch Normalization, MaxPool2d, skip and dropout = 0.25
+- Model test accuracy achieved 99.34% on 7th epoch
+- Model is Good fitting from 14th epoch (training accuracy: 98.94% test accuracy: 99.29%)
 
 ## Model-4 Summary
 ```
@@ -281,42 +279,99 @@ cpu
 ----------------------------------------------------------------
         Layer (type)               Output Shape         Param #
 ================================================================
-            Conv2d-1           [-1, 16, 28, 28]             144
-              ReLU-2           [-1, 16, 28, 28]               0
-       BatchNorm2d-3           [-1, 16, 28, 28]              32
-           Dropout-4           [-1, 16, 28, 28]               0
-            Conv2d-5           [-1, 24, 26, 26]           3,456
-              ReLU-6           [-1, 24, 26, 26]               0
-       BatchNorm2d-7           [-1, 24, 26, 26]              48
-           Dropout-8           [-1, 24, 26, 26]               0
-            Conv2d-9           [-1, 24, 26, 26]             576
-             ReLU-10           [-1, 24, 26, 26]               0
-      BatchNorm2d-11           [-1, 24, 26, 26]              48
-          Dropout-12           [-1, 24, 26, 26]               0
-        MaxPool2d-13           [-1, 24, 13, 13]               0
-           Conv2d-14           [-1, 12, 13, 13]           2,592
-             ReLU-15           [-1, 12, 13, 13]               0
-      BatchNorm2d-16           [-1, 12, 13, 13]              24
-          Dropout-17           [-1, 12, 13, 13]               0
-           Conv2d-18           [-1, 10, 13, 13]             120
-             ReLU-19           [-1, 10, 13, 13]               0
-      BatchNorm2d-20           [-1, 10, 13, 13]              20
-          Dropout-21           [-1, 10, 13, 13]               0
-           Conv2d-22           [-1, 10, 11, 11]             900
-        AvgPool2d-23             [-1, 10, 1, 1]               0
+            Conv2d-1            [-1, 8, 26, 26]              72
+              ReLU-2            [-1, 8, 26, 26]               0
+       BatchNorm2d-3            [-1, 8, 26, 26]              16
+            Conv2d-4           [-1, 16, 24, 24]           1,152
+              ReLU-5           [-1, 16, 24, 24]               0
+       BatchNorm2d-6           [-1, 16, 24, 24]              32
+            Conv2d-7           [-1, 16, 24, 24]             256
+            Conv2d-8           [-1, 16, 22, 22]           2,304
+              ReLU-9           [-1, 16, 22, 22]               0
+      BatchNorm2d-10           [-1, 16, 22, 22]              32
+          Dropout-11           [-1, 16, 22, 22]               0
+        MaxPool2d-12           [-1, 16, 11, 11]               0
+           Conv2d-13             [-1, 12, 9, 9]           1,728
+             ReLU-14             [-1, 12, 9, 9]               0
+      BatchNorm2d-15             [-1, 12, 9, 9]              24
+           Conv2d-16             [-1, 10, 7, 7]           1,080
+             ReLU-17             [-1, 10, 7, 7]               0
+      BatchNorm2d-18             [-1, 10, 7, 7]              20
+          Dropout-19             [-1, 10, 7, 7]               0
+           Conv2d-20             [-1, 10, 5, 5]             900
+        AvgPool2d-21             [-1, 10, 1, 1]               0
 ================================================================
-Total params: 7,960
-Trainable params: 7,960
+Total params: 7,616
+Trainable params: 7,616
 Non-trainable params: 0
 ----------------------------------------------------------------
 Input size (MB): 0.00
-Forward/backward pass size (MB): 1.53
+Forward/backward pass size (MB): 0.70
 Params size (MB): 0.03
-Estimated Total Size (MB): 1.56
+Estimated Total Size (MB): 0.73
 ----------------------------------------------------------------
 ```
 
 ## Logs from local model run
 ```
+EPOCH:0 Loss=0.2772088944911957 Batch_id=937 Accuracy=93.22 LR=0.01: 100%|██████████| 938/938 [00:47<00:00, 19.75it/s]  
+
+Test set: Average loss: 0.0917, Accuracy: 9722/10000 (97.22%)
+
+EPOCH:1 Loss=0.15196168422698975 Batch_id=937 Accuracy=97.58 LR=0.01: 100%|██████████| 938/938 [00:48<00:00, 19.20it/s]  
+
+Test set: Average loss: 0.0536, Accuracy: 9816/10000 (98.16%)
+
+EPOCH:2 Loss=0.047943100333213806 Batch_id=937 Accuracy=98.00 LR=0.01: 100%|██████████| 938/938 [00:47<00:00, 19.87it/s] 
+
+Test set: Average loss: 0.0491, Accuracy: 9848/10000 (98.48%)
+
+EPOCH:3 Loss=0.13433583080768585 Batch_id=937 Accuracy=98.24 LR=0.01: 100%|██████████| 938/938 [00:47<00:00, 19.69it/s]  
+
+Test set: Average loss: 0.0337, Accuracy: 9884/10000 (98.84%)
+
+EPOCH:4 Loss=0.02332298457622528 Batch_id=937 Accuracy=98.43 LR=0.01: 100%|██████████| 938/938 [00:47<00:00, 19.76it/s]  
+
+Test set: Average loss: 0.0332, Accuracy: 9890/10000 (98.90%)
+
+EPOCH:5 Loss=0.10475379973649979 Batch_id=937 Accuracy=98.48 LR=0.01: 100%|██████████| 938/938 [00:47<00:00, 19.77it/s]  
+
+Test set: Average loss: 0.0288, Accuracy: 9897/10000 (98.97%)
+
+EPOCH:6 Loss=0.09171748161315918 Batch_id=937 Accuracy=98.83 LR=0.001: 100%|██████████| 938/938 [00:47<00:00, 19.74it/s]  
+
+Test set: Average loss: 0.0255, Accuracy: 9916/10000 (99.16%)
+
+EPOCH:7 Loss=0.048325102776288986 Batch_id=937 Accuracy=98.94 LR=0.001: 100%|██████████| 938/938 [00:48<00:00, 19.53it/s] 
+
+Test set: Average loss: 0.0225, Accuracy: 9934/10000 (99.34%)
+
+EPOCH:8 Loss=0.0345466248691082 Batch_id=937 Accuracy=98.89 LR=0.001: 100%|██████████| 938/938 [00:46<00:00, 20.05it/s]   
+
+Test set: Average loss: 0.0228, Accuracy: 9928/10000 (99.28%)
+
+EPOCH:9 Loss=0.05782951042056084 Batch_id=937 Accuracy=98.90 LR=0.001: 100%|██████████| 938/938 [00:46<00:00, 20.04it/s]  
+
+Test set: Average loss: 0.0225, Accuracy: 9931/10000 (99.31%)
+
+EPOCH:10 Loss=0.013099533505737782 Batch_id=937 Accuracy=98.99 LR=0.001: 100%|██████████| 938/938 [00:46<00:00, 19.98it/s] 
+
+Test set: Average loss: 0.0233, Accuracy: 9924/10000 (99.24%)
+
+EPOCH:11 Loss=0.07027030736207962 Batch_id=937 Accuracy=98.95 LR=0.001: 100%|██████████| 938/938 [00:46<00:00, 20.19it/s]  
+
+Test set: Average loss: 0.0234, Accuracy: 9923/10000 (99.23%)
+
+EPOCH:12 Loss=0.014642177149653435 Batch_id=937 Accuracy=98.96 LR=0.0001: 100%|██████████| 938/938 [00:45<00:00, 20.42it/s] 
+
+Test set: Average loss: 0.0228, Accuracy: 9926/10000 (99.26%)
+
+EPOCH:13 Loss=0.016999501734972 Batch_id=937 Accuracy=99.00 LR=0.0001: 100%|██████████| 938/938 [00:46<00:00, 20.23it/s]    
+
+Test set: Average loss: 0.0235, Accuracy: 9926/10000 (99.26%)
+
+EPOCH:14 Loss=0.0016753156669437885 Batch_id=937 Accuracy=98.94 LR=0.0001: 100%|██████████| 938/938 [00:48<00:00, 19.41it/s]
+
+Test set: Average loss: 0.0221, Accuracy: 9929/10000 (99.29%)
 ```
 
