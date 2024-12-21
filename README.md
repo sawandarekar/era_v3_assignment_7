@@ -251,3 +251,72 @@ EPOCH:19 Loss=0.004888974595814943 Batch_id=937 Accuracy=99.16 LR=1e-05: 100%|â–
 
 Test set: Average loss: 0.0195, Accuracy: 9943/10000 (99.43%)
 ```
+
+------------------------------------------------------------------------------------
+
+## Model-4 execution
+
+## Target:
+- Reduce parameters bellow 8k count
+- Make sure, defined model get trained, also add GAP, MaxPool,
+- Achive test accuracy > 99.40%
+- Limit the 20 epoch
+
+## Result:
+- Parameters: 
+- Best Training Accuracy: 
+- Best Test Accuracy: 
+
+## Analysis:
+- model trained with 8k parameters
+- Added Batch Normalization, MaxPool2d and dropout = 0.1
+- skip added, image augmentation, StepLR added
+- Model test accuracy achieved 99.42% on 15th epoch
+- Model is Good fitting from 19th epoch (training accuracy: 99.32% test accuracy: 99.35%)
+
+## Model-4 Summary
+```
+Requirement already satisfied: torchsummary in /Users/sawan.darekar/Library/Python/3.9/lib/python/site-packages (1.5.1)
+cpu
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 16, 28, 28]             144
+              ReLU-2           [-1, 16, 28, 28]               0
+       BatchNorm2d-3           [-1, 16, 28, 28]              32
+           Dropout-4           [-1, 16, 28, 28]               0
+            Conv2d-5           [-1, 24, 26, 26]           3,456
+              ReLU-6           [-1, 24, 26, 26]               0
+       BatchNorm2d-7           [-1, 24, 26, 26]              48
+           Dropout-8           [-1, 24, 26, 26]               0
+            Conv2d-9           [-1, 24, 26, 26]             576
+             ReLU-10           [-1, 24, 26, 26]               0
+      BatchNorm2d-11           [-1, 24, 26, 26]              48
+          Dropout-12           [-1, 24, 26, 26]               0
+        MaxPool2d-13           [-1, 24, 13, 13]               0
+           Conv2d-14           [-1, 12, 13, 13]           2,592
+             ReLU-15           [-1, 12, 13, 13]               0
+      BatchNorm2d-16           [-1, 12, 13, 13]              24
+          Dropout-17           [-1, 12, 13, 13]               0
+           Conv2d-18           [-1, 10, 13, 13]             120
+             ReLU-19           [-1, 10, 13, 13]               0
+      BatchNorm2d-20           [-1, 10, 13, 13]              20
+          Dropout-21           [-1, 10, 13, 13]               0
+           Conv2d-22           [-1, 10, 11, 11]             900
+        AvgPool2d-23             [-1, 10, 1, 1]               0
+================================================================
+Total params: 7,960
+Trainable params: 7,960
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.00
+Forward/backward pass size (MB): 1.53
+Params size (MB): 0.03
+Estimated Total Size (MB): 1.56
+----------------------------------------------------------------
+```
+
+## Logs from local model run
+```
+```
+
